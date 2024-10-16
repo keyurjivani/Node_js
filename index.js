@@ -4,12 +4,17 @@ const User = require('./User.schema');
 const app = express();
 
 app.get('/', async(req, res) => {
-    let data = await User.findOne();
+    let data = await User.find();
+    console.log("data", data);
+    console.log("success");
     res.send(data);
 });
 
+
 app.post('/', async(req, res) => {
     let data = await User.create(req.body);
+    console.log("post created");
+    
     res.send(data);
 });
 
@@ -28,4 +33,8 @@ app.patch('/:id', async(req, res) => {
 app.listen(8090, ()=>{
     console.log("Connected Server");
     db_conn();
-})
+});
+
+
+
+

@@ -35,15 +35,5 @@ app.listen(8090, ()=>{
     db_conn();
 });
 
-// const express = require('express');
-// const app = express();
-// app.get('/', (req, res) => {
-//     res.send('Hello World');
-// });
-
-// app.listen(8090, ()=>{
-//     console.log("port 8090 listening on");
-    
-// });
 
 

@@ -1,5 +1,24 @@
 import { Users } from "./Api.js";
 
+
+const Data = (e) => {
+    e.preventDefault();
+
+    let user_data = {
+         username : document.getElementById("username").value,
+         email :  document.getElementById("email").value,
+         password : document.getElementById("password").value,
+    }
+    console.log(user_data);
+
+    Users.post();
+}
+
+
+
+
+
+
 let get_user = await Users.get()
 
 
@@ -19,3 +38,6 @@ const mapper = (data) =>{
     })
 }
 mapper(get_user)
+
+
+document.getElementById("datas").addEventListener("submit", Data)

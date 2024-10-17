@@ -1,8 +1,9 @@
 const express = require('express');
 const db_conn = require('./db');
 const User = require('./User.schema');
+const cors=require("cors")
 const app = express();
-
+app.use(cors())
 app.get('/', async(req, res) => {
     let data = await User.find();
     console.log("data", data);
